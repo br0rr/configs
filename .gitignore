@@ -2,5 +2,5 @@
 **/.env
 
 # Ignore Jellyfin runtime data and cache inside configs/jellyfin
-configs/jellyfin/config/
-configs/jellyfin/cache/
+jellyfin/config/
+jellyfin/cache/
