@@ -1,6 +1,11 @@
-# Ignore .env files anywhere in the repo
+# Ignore environment files
 **/.env
 
-# Ignore Jellyfin runtime data and cache inside configs/jellyfin
-jellyfin/config/
-jellyfin/cache/
+# Ignore runtime data if accidentally created inside the repository
+**/config/
+**/cache/
+
+# Ignore OS/editor files
+.DS_Store
+*.swp
+*.swo
