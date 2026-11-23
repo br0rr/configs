@@ -1,0 +1,23 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:2025.11.1
+    hostname: infra-pi
+    network_mode: host
+
+    environment:
+      TZ: America/Kentucky/Louisville
+
+      FTLCONF_webserver_api_password: ${PIHOLE_PASSWORD}
+
+      FTLCONF_dns_listeningMode: LOCAL
+      FTLCONF_dns_upstreams: "127.0.0.1#5335"
+
+      FTLCONF_webserver_port: "8080o,[::]:8080o"
+
+      FTLCONF_dhcp_active: "false"
+
+    volumes:
+      - /srv/homelab/pihole/etc-pihole:/etc/pihole
+
+    restart: unless-stopped
